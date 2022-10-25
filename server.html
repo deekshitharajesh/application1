@@ -185,7 +185,7 @@
                             </div>
                             <div class="mt-3">
                                 <button class="btn btn-primary float-right"
-                                    onclick="submitForm();  ">Submit</button>
+                                    onclick="submitForm();myFunctions();">Submit</button>
                             </div>
 
                             <!--<div class="w-100">
@@ -240,9 +240,9 @@
             }
          }
 
-       // function myFunctions() {
-         //   alert('Successfully Done !!!');
-        //}
+        function myFunctions() {
+            alert('Successfully Done !!!');
+        }
 
         $(document).ready(function () {
             $("#myInput").on("keyup", function () {
@@ -426,7 +426,7 @@
                     tmpData += "<td>" + element.typeofdevice + "</td>";
 
                     tmpData += "<td><button class='btn btn-primary' onclick='editDataCall(`" + element.id + "`)'>Edit</button></td>";
-                    tmpData += "<td><button class='btn btn-danger' onclick='deleteData(`" + element.id + "`)'>Delete</button></td>";
+                    tmpData += "<td><button class='btn btn-danger' onclick='deleteData(`" + element.id + "`);myFunction();'>Delete</button></td>";
 
                     tmpData += "</tr>";
 
@@ -436,9 +436,9 @@
         }
         getData();
 
-        //function myFunction() {
-            //alert("Successfully Deleted !");
-        //}
+        function myFunction() {
+            alert("Successfully Deleted !");
+        }
         function deleteData(id) {
             fetch("http://35.92.83.205:8080/api/deleteserver/" + id, {
                 method: "DELETE",
